@@ -8,15 +8,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-
-  <link rel="stylesheet" href="{{assets(css/app.css)}}">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
   <!-- Google Font -->
   <link rel="stylesheet"
@@ -58,7 +50,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -71,7 +63,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -83,7 +75,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -95,7 +87,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -107,7 +99,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -1537,7 +1529,8 @@
 </div>
 <!-- ./wrapper -->
 
+<!-- jQuery 3 -->
 
-<script src="{{asset(js/app.js)}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
