@@ -6,6 +6,9 @@ use App\master;
 use File;
 use Excel;
 use Illuminate\Http\Request;
+use Session;
+use DB;
+use Illuminate\Support\Facades\DB;
 
 class MasterController extends Controller
 {
@@ -87,7 +90,7 @@ class MasterController extends Controller
 
     public function import(Request $request)
     {
-        ini_set('max_execution_time', 580);
+        ini_set('max_execution_time', 680);
         $dateinit = \Carbon\Carbon::parse($request->dateini);
         $datefim = \Carbon\Carbon::parse($request->datefim);
         $this->validate($request, array(
@@ -173,7 +176,7 @@ class MasterController extends Controller
                             ];
                         }
                         if (!empty($insert)) {
-                            $insertData = DB::table('lists')->insert($insert);
+                            $insertData = DB::table('masters')->insert($insert);
                             if ($insertData) {
                                 Session::flash('success', 'Your Data has successfully imported');
                             } else {

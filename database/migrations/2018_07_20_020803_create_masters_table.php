@@ -76,13 +76,13 @@ class CreateMastersTable extends Migration
             $table->string('PPAP', 10)->nullable(true);
             $table->string('SID_SEKTOR_EKONOMI', 5)->nullable(true);
             $table->string('Deskripsi_Bidang_Usaha', 100)->nullable(true);
-            $table->string('Id_Account_Management', 9)->nullable(true);
-            $table->string('kodeunit', 2)->nullable(true);
-            $table->string('NamaUnit', 25)->nullable(true);
-            $table->string('InisialCab', 3)->nullable(true);
+            $table->string('Id_Account_Management', 10)->nullable(true);
+            $table->string('kodeunit', 10)->nullable(true);
+            $table->string('NamaUnit', 256)->nullable(true);
+            $table->string('InisialCab', 10)->nullable(true);
             $table->string('NamaCabang', 10)->nullable(true);
-            $table->string('Kota_ID', 4)->nullable(true);
-            $table->string('Angsuran_Ke', 3)->nullable(true);
+            $table->string('Kota_ID', 10)->nullable(true);
+            $table->string('Angsuran_Ke', 10)->nullable(true);
         });
     }
 
