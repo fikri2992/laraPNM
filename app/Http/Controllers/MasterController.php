@@ -7,7 +7,6 @@ use File;
 use Excel;
 use Illuminate\Http\Request;
 use Session;
-use DB;
 use Illuminate\Support\Facades\DB;
 
 class MasterController extends Controller
