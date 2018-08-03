@@ -58,7 +58,7 @@
 
                         <form action="{{ route('admin') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }} Choose your xls/csv File :
-                            <input type="file" name="file" style="width: 70%" accept=".xls,.xlsx"  class="form-control">
+                            <input type="file" name="file" style="width: 60%" accept=".xls,.xlsx"  class="form-control">
                             <input type="submit" class="btn btn-primary btn-lg" style="margin-top: 1%">
                         </form>
 
