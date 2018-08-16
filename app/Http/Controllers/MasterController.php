@@ -6,6 +6,8 @@ use App\master;
 use File;
 use Excel;
 use Illuminate\Http\Request;
+use DB;
+use Session;
 
 class MasterController extends Controller
 {
@@ -16,7 +18,7 @@ class MasterController extends Controller
      */
     public function index()
     {
-        //
+      return view('main');
     }
 
     /**
@@ -173,7 +175,7 @@ class MasterController extends Controller
                             ];
                         }
                         if (!empty($insert)) {
-                            $insertData = DB::table('lists')->insert($insert);
+                            $insertData = DB::table('masters')->insert($insert);
                             if ($insertData) {
                                 Session::flash('success', 'Your Data has successfully imported');
                             } else {

@@ -78,7 +78,7 @@ class CreateMastersTable extends Migration
             $table->string('Deskripsi_Bidang_Usaha', 100)->nullable(true);
             $table->string('Id_Account_Management', 9)->nullable(true);
             $table->string('kodeunit', 2)->nullable(true);
-            $table->string('NamaUnit', 25)->nullable(true);
+            $table->string('NamaUnit', 50)->nullable(true);
             $table->string('InisialCab', 3)->nullable(true);
             $table->string('NamaCabang', 10)->nullable(true);
             $table->string('Kota_ID', 4)->nullable(true);

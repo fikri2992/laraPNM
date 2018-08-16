@@ -14,6 +14,7 @@ return [
  */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'env' => env('APP_ENV', 'production'),
 
     /*
     |--------------------------------------------------------------------------
@@ -146,6 +147,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -160,6 +163,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         'Maatwebsite\Excel\ExcelServiceProvider',
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
+        /*
+        * Application Error log views...
+        */
+
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+
 
     ],
 
@@ -210,6 +220,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+        'Lava' => 'Khill\Lavacharts\Laravel\LavachartsFacade',
+        'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
     ],
 
 ];

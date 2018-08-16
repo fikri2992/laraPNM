@@ -37,6 +37,9 @@ Menu::macro('sidebar', function () {
 //         ->add(Menu::adminlteSeparator('Acacha Adminlte'))
 //         #adminlte_menu
         ->add(Link::toUrl('admin', '<i class="fa fa-link"></i><span>Admin</span>'))
+        ->add(Link::toUrl('detail', '<i class="fa fa-book"></i><span>Details</span>'))
+
+        ->add(Link::toUrl('create-chart', '<i class="fa fa-link"></i><span>Chart</span>'))
         // ->add(Menu::adminlteSeparator('SECONDARY MENU'))
         // ->add(Menu::new()->prepend('<a href="#"><i class="fa fa-share"></i><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>')
         //     ->addParentClass('treeview')
