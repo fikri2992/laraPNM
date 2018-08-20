@@ -19,19 +19,48 @@ class ChartController extends Controller
 
       // $users = DB::select('SELECT NamaUnit, COUNT(Jml_Pinjaman) FROM `masters` GROUP BY(kodeunit)');
 
-        $chart = Charts::database(Master::all(),'bar','highcharts')
-            ->responsive(true)
-            ->title('Chart Bar')
-            ->groupby('NamaUnit')
-            ->elementLabel('Nama Unit')
-            ->labels(['Unit Cicaheum Bdg','Unit Cijerah - Bandung','Unit Dayeuhkolot - Bandung','Unit Gegerkalong','Unit Leuwi Panjang Bdg','Unit Buahbatu - Bandung','Unit Dalem Kaum - Syariah','Unit Ciroyom','Unit Kopo','Unit Cihampelas','Unit Ciwastra','Unit Ciparay','Unit Rancaekek']);
+
+      //grafik 1
+        // $chart = Charts::database(Master::all(),'bar','highcharts')
+        //     ->responsive(true)
+        //     ->title('Grafik NOA')
+        //     ->groupby('NamaUnit')
+        //     ->dimensions(1000, 500)
+        //     ->elementLabel('jumlah noa')
+        //     ->labels(['Unit Cicaheum Bdg','Unit Cijerah - Bandung','Unit Dayeuhkolot - Bandung','Unit Gegerkalong','Unit Leuwi Panjang Bdg','Unit Buahbatu - Bandung','Unit Dalem Kaum - Syariah','Unit Ciroyom','Unit Kopo','Unit Cihampelas','Unit Ciwastra','Unit Ciparay','Unit Rancaekek']);
+        //grafik 2
+        // $line = DB::database(Master::all(),'line', 'highcharts')
+        //     ->elementLabel("Jumlah OS")
+        //     ->title('Grafik OS')
+        //     ->responsive(false)
+        //     ->groupby('kodeunit')
+        //     // ->labels(['Unit Cicaheum Bdg','Unit Cijerah - Bandung','Unit Dayeuhkolot - Bandung','Unit Gegerkalong','Unit Leuwi Panjang Bdg','Unit Buahbatu - Bandung','Unit Dalem Kaum - Syariah','Unit Ciroyom','Unit Kopo','Unit Cihampelas','Unit Ciwastra','Unit Ciparay','Unit Rancaekek']);
+        //     ->labels(['AE']);
+
+        $data = DB::table('masters')
+            ->select('NamaUnit',  DB::raw('sum(OS_Pokok) as sum'))
+            // ->orderBy('masters.NamaUnit')
+            ->groupBy(DB::raw("NamaUnit"))
+            ->get();
+
+            $chart = Charts::database($data,'area', 'morris')
+                ->responsive(true)
+                ->title('Grafik OS')
+                ->elementLabel('jumlah os')
+                ->labels(['Unit Cicaheum Bdg','Unit Cijerah - Bandung','Unit Dayeuhkolot - Bandung','Unit Gegerkalong','Unit Leuwi Panjang Bdg','Unit Buahbatu - Bandung','Unit Dalem Kaum - Syariah','Unit Ciroyom','Unit Kopo','Unit Cihampelas','Unit Ciwastra','Unit Ciparay','Unit Rancaekek']);
 
 
-        $pie = Charts::database(Master::all(),'pie','highcharts')
-            ->title('Chart Pie')
-            ->responsive(true)
-            ->groupby('TipeKredit')
-            ->labels(['3R','Baru','TOP UP']);
+            // $bar = Charts::database('area')
+            // ->select('OS_Pokok', Charts::raw('sum(amount) as amount'))
+            // ->groupBy('NamaUnit')
+            // ->get();
+            //
+            // $bar = Charts::database($bar,'area', 'highcharts')
+            // ->elementLabel("Total")
+            // ->title('Monthly Collection')
+            // ->dimensions(1000, 500)
+            // ->responsive(false)
+            // ->groupByDay();
 
         // $donut = Charts::database(Master::all(), 'donut', 'highcharts')
         //     ->title('Chart donut')
@@ -83,7 +112,7 @@ class ChartController extends Controller
 
                 // return view('chart', ['chart' => $chart]);
 
-                return view('chart', compact('chart','pie'));
+                return view('chart', compact('chart','line'));
 
     }
 }

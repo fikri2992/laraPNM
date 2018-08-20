@@ -11,7 +11,7 @@
 
 				<div class="box box-success box-solid">
                     <div class="box-header with-border">
-                        <center><h3 class="box-title">Nama Unit</h3></center>
+                        <center><h3 class="box-title">OS</h3></center>
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -23,7 +23,7 @@
 										<!-- script chart 1-->
 										<html lang="en">
 										<head>
-												<title>My Charts</title>
+												<title>OS</title>
 
 												{!! Charts::styles() !!}
 
@@ -50,85 +50,5 @@
 					<!-- done chart pertama -->
 
 					<!-- membuat chart ke 2 -->
-						<div class="row">
-							<div class="col-md-7 col-md-offset-5">
 
-								<div class="box box-success box-solid">
-														<div class="box-header with-border">
-																<center><h3 class="box-title">Tipe Kredit</h3></center>
-																<div class="box-tools pull-right">
-																		<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-																		<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-																</div>
-																<!-- /.box-tools -->
-														</div>
-														<!-- /.box-header -->
-														<div class="box-body">
-
-														<!-- Script Chart ke 2 -->
-														<html lang="en">
-													<head>
-															{!! Charts::styles() !!}
-
-													</head>
-													<body>
-												  		<!-- Main Application (Can be VueJS or other JS framework) -->
-															<div class="col-md-12">
-																{!! $pie->html() !!}
-																</div>
-															</div>
-														</div>
-															<!-- End Of Main Application -->
-															{!! Charts::scripts() !!}
-															{!! $pie->script() !!}
-
-															</script>
-													</body>
-													</html>
-
-														</div>
-														<!-- /.box-body -->
-												</div>
-							<!-- done chart kedua -->
-
-							<!-- membuat chart ke 3 -->
-							<div class="row">
-								<div class="col-md-7 col-md-offset-5">
-
-									<div class="box box-success box-solid">
-															<div class="box-header with-border">
-																	<center><h3 class="box-title">Tipe Kredit</h3></center>
-																	<div class="box-tools pull-right">
-																			<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-																			<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-																	</div>
-																	<!-- /.box-tools -->
-															</div>
-															<!-- /.box-header -->
-															<div class="box-body">
-
-															<!-- Script Chart ke 2 -->
-															<html lang="en">
-														<head>
-																{!! Charts::styles() !!}
-
-														</head>
-														<body>
-																<!-- Main Application (Can be VueJS or other JS framework) -->
-																<div class="col-md-12">
-																	{!! $pie->html() !!}
-																	</div>
-																</div>
-															</div>
-																<!-- End Of Main Application -->
-																{!! Charts::scripts() !!}
-																{!! $pie->script() !!}
-
-																</script>
-														</body>
-														</html>
-
-															</div>
-															<!-- /.box-body -->
-													</div>
 @endsection
