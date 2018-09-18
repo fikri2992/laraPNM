@@ -14,14 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::group(['middleware' => 'auth'], function () {
-    //    Route::get('/link1', function ()    {
+//
+// Route::group(['middleware' => 'auth'], function () {
+//        Route::get('/link1', function ()    {
 //        // Uses Auth Middleware
 //    });
 
-    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
+    // Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
+<<<<<<< HEAD
     Route::get('admin', function () {
         $data = [];
         return view('admin', $data);
@@ -31,3 +32,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin', 'MasterController@import')->name('admin');
     Route::get('detail', 'DetailController@index')->name('detail');
 });
+=======
+    // Route::get('admin', function () {
+    //     $data = [];
+    //     return view('admin', $data);
+    // })->name('admin');
+    // //
+    // Route::get('about', 'AboutController@index')->name('about');
+    // Route::post('admin', 'MasterController@import')->name('admin');
+    //
+    // Route::get('charts', 'ChartsController@stt');
+    // Route::get('charts', 'ChartController@index')->name('chart.index');
+
+    Route::get('create-chart','ChartController@makeChart');
+//
+// });
+>>>>>>> grafik

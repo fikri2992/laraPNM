@@ -6,8 +6,13 @@ use App\master;
 use File;
 use Excel;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Session;
 use Illuminate\Support\Facades\DB;
+=======
+use DB;
+use Session;
+>>>>>>> grafik
 
 class MasterController extends Controller
 {
@@ -18,7 +23,7 @@ class MasterController extends Controller
      */
     public function index()
     {
-        //
+      return view('main');
     }
 
     /**
