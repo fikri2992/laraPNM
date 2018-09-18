@@ -80,7 +80,7 @@ class CreateMastersTable extends Migration
             $table->string('kodeunit', 10)->nullable(true);
             $table->string('NamaUnit', 256)->nullable(true);
             $table->string('InisialCab', 10)->nullable(true);
-            $table->string('NamaCabang', 10)->nullable(true);
+            $table->string('NamaCabang', 256)->nullable(true);
             $table->string('Kota_ID', 10)->nullable(true);
             $table->string('Angsuran_Ke', 10)->nullable(true);
         });
