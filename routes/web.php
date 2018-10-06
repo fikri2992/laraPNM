@@ -22,6 +22,14 @@ Route::get('/', function () {
 
     // Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
+Route::get('admin', function () {
+    $data = [];
+    return view('admin', $data);
+})->name('admin');
+
+Route::get('about', 'AboutController@index')->name('about');
+Route::post('admin', 'MasterController@import')->name('admin');
+Route::get('detail', 'DetailController@index')->name('detail');
     // Route::get('admin', function () {
     //     $data = [];
     //     return view('admin', $data);
@@ -33,6 +41,6 @@ Route::get('/', function () {
     // Route::get('charts', 'ChartsController@stt');
     // Route::get('charts', 'ChartController@index')->name('chart.index');
 
-    Route::get('create-chart','ChartController@makeChart');
+Route::get('create-chart', 'ChartController@makeChart');
 //
 // });

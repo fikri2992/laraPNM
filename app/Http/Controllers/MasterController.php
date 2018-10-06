@@ -6,8 +6,8 @@ use App\master;
 use File;
 use Excel;
 use Illuminate\Http\Request;
-use DB;
 use Session;
+use DB;
 
 class MasterController extends Controller
 {
@@ -18,7 +18,7 @@ class MasterController extends Controller
      */
     public function index()
     {
-      return view('main');
+        return view('main');
     }
 
     /**
@@ -89,7 +89,7 @@ class MasterController extends Controller
 
     public function import(Request $request)
     {
-        ini_set('max_execution_time', 580);
+        ini_set('max_execution_time', 680);
         $dateinit = \Carbon\Carbon::parse($request->dateini);
         $datefim = \Carbon\Carbon::parse($request->datefim);
         $this->validate($request, array(
